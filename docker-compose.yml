@@ -1,0 +1,8 @@
+services:
+  isr:
+    build:
+      context: .
+      dockerfile: custombuild.dockerfile
+    command: python -u main.py
+    volumes:
+      - ./codes:/ISR
