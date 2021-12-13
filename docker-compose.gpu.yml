@@ -2,7 +2,7 @@ services:
   isr:
     build:
       context: .
-      dockerfile: custombuild.dockerfile
+      dockerfile: Dockerfile.gpu
     command: nvidea-smi && python -u main.py
     volumes:
       - ./codes:/ISR

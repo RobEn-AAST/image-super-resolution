@@ -2,7 +2,7 @@ services:
   isr:
     build:
       context: .
-      dockerfile: custombuild.dockerfile
+      dockerfile: Dockerfile.cpu
     command: python -u main.py
     volumes:
       - ./codes:/ISR
