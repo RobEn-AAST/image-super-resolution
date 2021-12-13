@@ -27,6 +27,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: test docker cpu
-        run: | 
-          nvidea-smi 
+        run: |
           docker-compose -f docker-compose.cpu.yml up
