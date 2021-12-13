@@ -1,0 +1,9 @@
+services:
+  isr:
+    build:
+      context: .
+      dockerfile: custombuild.dockerfile
+    command: nvidea-smi && python -u main.py
+    volumes:
+      - ./codes:/ISR
+    runtime: nvidia 

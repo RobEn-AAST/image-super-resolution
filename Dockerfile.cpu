@@ -1,4 +1,6 @@
-FROM tensorflow/tensorflow:1.13.1-py3
+FROM tensorflow/tensorflow:2.0.0-py3
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install system packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -14,17 +16,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/* \
     apt-get upgrade
 
-ENV TENSOR_HOME /home/isr
-WORKDIR $TENSOR_HOME
-
-COPY ISR ./ISR
-COPY scripts ./scripts
-COPY weights ./weights
-COPY config.yml ./
-COPY setup.py ./
+WORKDIR /ISR
 
 RUN pip install --upgrade pip
-RUN pip install -e .
 
-ENV PYTHONPATH ./ISR/:$PYTHONPATH
-ENTRYPOINT ["sh", "./scripts/entrypoint.sh"]
+RUN pip install ISR numpy pillow 
