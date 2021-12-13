@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: test docker gpu
-        run: docker-compose up docker-compose.gpu.yml -f 
+        run: docker-compose up docker-compose.gpu.yml -f up
