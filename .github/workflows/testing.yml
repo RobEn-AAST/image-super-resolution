@@ -26,5 +26,5 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: test docker
-        run: docker-compose up -f docker-compose.gpu.yml
+      - name: test docker gpu
+        run: docker-compose up docker-compose.gpu.yml -f 
